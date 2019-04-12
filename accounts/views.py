@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from .forms import UserInfoForm
+from post.models import Post
 
 
 def register(request):
@@ -34,10 +35,6 @@ def register(request):
             email=email,
             first_name=first_name, 
             last_name=last_name)
-          # Login after register
-          # auth.login(request, user)
-          # messages.success(request, 'You are now logged in')
-          # return redirect('index')
           user.save()
           if user_info.is_valid():
             user_detail = user_info.save(commit=False)
@@ -79,5 +76,44 @@ def logout(request):
     messages.success(request, 'You are now logged out')
     return redirect('/')
 
+
+
 def dashboard(request):
-  return render(request, 'accounts/dashboard.html')
+  
+  aticle_list = Post.objects.order_by('-timestamp').filter(id=request.user.id)
+
+  context = {
+    'contacts': aticle_list
+  }
+
+  return render(request, 'accounts/dashboard.html',context)
+
+
+def post_update(request, id):
+    title = 'Update'
+    post = get_object_or_404(Post, id=id)
+    form = PostForm(
+        request.POST or None, 
+        request.FILES or None, 
+        instance=post)
+    author = get_author(request.user)
+    if request.method == "POST":
+        if form.is_valid():
+            form.instance.author = author
+            form.save()
+            return redirect(reverse("post-detail", kwargs={
+                'id': form.instance.id
+            }))
+    context = {
+        'title': title,
+        'form': form
+    }
+    return render(request, "post_create.html", context)
+
+
+
+def post_delete(request, id):
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect(reverse("post-list"))
+

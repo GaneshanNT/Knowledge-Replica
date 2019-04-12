@@ -63,21 +63,12 @@ def index(request):
     latest = Post.objects.order_by('-timestamp')[:3]
     post_list = Post.objects.all()
 
-
     context = {
         'object_list': featured,
         'latest': latest,
         'category_count': category_count
     }
     return render(request, 'index.html', context)
-
-
-
-
-
-
-
-
 
 
 
@@ -124,6 +115,8 @@ def post(request, id):
     }
     return render(request, 'post.html', context)
 
+
+
 def post_create(request):
     title = 'Create'
     form = PostForm(request.POST or None, request.FILES or None)
@@ -140,6 +133,9 @@ def post_create(request):
         'form': form
     }
     return render(request, "post_create.html", context)
+
+
+
 
 def post_update(request, id):
     title = 'Update'
@@ -163,7 +159,11 @@ def post_update(request, id):
     return render(request, "post_create.html", context)
 
 
+
+
+
 def post_delete(request, id):
     post = get_object_or_404(Post, id=id)
     post.delete()
     return redirect(reverse("post-list"))
+
