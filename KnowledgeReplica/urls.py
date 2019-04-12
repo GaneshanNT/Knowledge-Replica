@@ -9,7 +9,8 @@ from post.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('accounts/', include('accounts.urls')),
+    path('', index,name='index'),
     path('blog/', blog, name='post-list'),
     path('search/', search, name='search'),
     path('create/', post_create, name='post-create'),

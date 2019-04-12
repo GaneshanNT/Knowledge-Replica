@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'post',
     'newsletter',
     'tinymce',
+    'accounts',
     'crispy_forms',
 ]
 

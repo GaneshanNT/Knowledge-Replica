@@ -4,7 +4,10 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .forms import CommentForm, PostForm
 from .models import Post, Author
 from newsletter.models import Signup
+from newsletter.forms import EmailSignupForm
 
+
+form = EmailSignupForm()
 
 def get_author(user):
     qs = Author.objects.filter(user=user)
@@ -35,21 +38,48 @@ def get_category_count():
     return queryset
 
 
+# def index(request):
+#     featured = Post.objects.filter(featured=True)
+#     latest = Post.objects.order_by('-timestamp')[0:3]
+
+#     if request.method == "POST":
+#         email = request.POST["email"]
+#         new_signup = Signup()
+#         new_signup.email = email
+#         new_signup.save()
+
+#     context = {
+#         'object_list': featured,
+#         'latest': latest,
+#         'form': form
+#     }
+#     return render(request, 'index.html', context)
+
+
+
 def index(request):
     featured = Post.objects.filter(featured=True)
-    latest = Post.objects.order_by('-timestamp')[0:3]
+    category_count = get_category_count()
+    latest = Post.objects.order_by('-timestamp')[:3]
+    post_list = Post.objects.all()
 
-    if request.method == "POST":
-        email = request.POST["email"]
-        new_signup = Signup()
-        new_signup.email = email
-        new_signup.save()
 
     context = {
         'object_list': featured,
-        'latest': latest
+        'latest': latest,
+        'category_count': category_count
     }
     return render(request, 'index.html', context)
+
+
+
+
+
+
+
+
+
+
 
 def blog(request):
     category_count = get_category_count()
