@@ -70,4 +70,12 @@ Screenshoots :
 
 ![Cat](https://github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/7.png)
 
+## User Dashboard
+
+![Cat](https://github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/8.png)
+
+## Admin Dashboard
+
+![Cat](https://github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/9.png)
+
 
