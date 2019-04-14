@@ -1,0 +1,9 @@
+
+*.pyc
+*~
+__pycache__
+myvenv
+myammaji
+.DS_Store
+.env
+.vscode
