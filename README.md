@@ -2,7 +2,7 @@
 
 Article publishing platform.let the world to know about your skills :)
 
-![alt text](https://raw.github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/1..png)
+![Cat](https://raw.github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/1..png)
 
 
 ![alt text](https://raw.github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/2.png)
