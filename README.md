@@ -1,4 +1,4 @@
-# Knowledge-Replica
+# Knowledge-Replica - Contributions are welcome
 
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
@@ -77,5 +77,4 @@ Screenshoots :
 ## Admin Dashboard
 
 ![Cat](https://github.com/GaneshanNT/Knowledge-Replica/blob/master/screenshots/9.png)
-
 
