@@ -10,3 +10,14 @@ db.sqlite3
 /KnowledgeReplica/__pycache__
 /media
 /static
+.vscode
+.settings
+*.pyc
+.DS_Store
+_build
+.*.sw[po]
+*.egg-info
+dist
+build
+MANIFEST
+env
