@@ -1,5 +1,5 @@
 certifi==2018.11.29
-Django==2.2.13
+Django==2.2.20
 django-crispy-forms==1.7.2
 django-tinymce==2.8.0
 django-tinymce4-lite==1.7.4
