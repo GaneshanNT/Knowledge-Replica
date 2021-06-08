@@ -4,5 +4,5 @@ django-crispy-forms==1.7.2
 django-tinymce==2.8.0
 django-tinymce4-lite==1.7.4
 jsmin==2.2.2
-Pillow==5.4.1
+Pillow==8.2.0
 pytz==2018.9
